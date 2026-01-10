@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employer - Job Posting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 500px;
+      margin: 30px auto;
+      border: 1px solid black;
+      padding: 20px;
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    hr {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- SELECT COMPANY -->
+    <h3>Select Company</h3>
+    <label>Company Name:</label>
+    <select>
+      <option>-- Select Company --</option>
+      <option>Google</option>
+      <option>Amazon</option>
+      <option>Microsoft</option>
+    </select>
+
+    <hr>
+
+    <!-- CREATE JOB POST -->
+    <h3>Create New Job Post</h3>
+
+    <form>
+      <label>Job Title:</label>
+      <input type="text" placeholder="Software Engineer" required>
+
+      <label>Job Description:</label>
+      <textarea rows="3" required></textarea>
+
+      <label>Location:</label>
+      <input type="text" placeholder="city" required>
+
+      <label>Experience Required:</label>
+      <input type="text" placeholder="0-2 Years" required>
+
+      <label>Salary Range:</label>
+      <input type="text" placeholder="₹4 LPA - ₹12 LPA">
+
+      <label>Job Type:</label>
+      <select>
+        <option>Full Time</option>
+        <option>Part Time</option>
+        <option>Internship</option>
+      </select>
+
+      <button type="submit">Post Job</button>
+    </form>
+
+    <hr>
+
+    <!-- EDIT JOB DETAILS -->
+    <h3>Edit Job Details</h3>
+
+    <form>
+      <label>Select Company:</label>
+      <select>
+        <option>Google</option>
+        <option>Amazon</option>
+        <option>Microsoft</option>
+      </select>
+
+      <label>Select Job Role:</label>
+      <select>
+        <option>Software Engineer</option>
+        <option>Data Analyst</option>
+        <option>Tester</option>
+      </select>
+
+      <label>Update Job Description:</label>
+      <textarea rows="3"></textarea>
+
+      <label>Update Location:</label>
+      <input type="text">
+
+      <label>Update Experience:</label>
+      <input type="text">
+
+      <button type="submit">Update Job</button>
+    </form>
+
+  </div>
+
+</body>
+</html>

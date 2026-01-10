@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Portal - Register</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<center>
+   <div class="container">
+    <h2>Create Job Seeker Account</h2>
+
+    <form onsubmit="return validateForm()">
+        <label>Full Name:</label><br>
+        <input type="text" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" required><br><br>
+
+        <label>Contact No:</label><br>
+        <input type="tel" required><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" id="age" required><br><br>
+
+        <label>Work Status:</label><br>
+        <table>
+            <td>
+        <input type="radio" name="workStatus" required> Experienced<br>
+        <input type="radio" name="workStatus"> Fresher<br><br>
+            </td>
+        
+        </table>
+        
+
+        <label>Password:</label><br>
+        <input type="password" id="password" required><br><br>
+
+        <label>Confirm Password:</label><br>        
+        <input type="password" id="confirmPassword" required><br><br>
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <p id="error" style="color:red;"></p>
+
+    <p>
+        Already have an account? <a href="login_seeker.html">Login here</a>
+    </p>
+</div>
+</center>
+
+    <script>
+        function validateForm() {
+            let age = document.getElementById("age").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let error = document.getElementById("error");
+            
+            if (age < 14) {
+                error.innerText = "Age must be 14 years or above.";
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                error.innerText = "Passwords do not match.";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>

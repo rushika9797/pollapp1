@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Company Profile</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        width: 500px;
+        margin: 30px auto;
+        border: 1px solid black;
+        padding: 20px;
+      }
+
+      h2,
+      h3 {
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 15px;
+        padding: 8px;
+        width: 100%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Create profile</h2>
+
+    <div class="container">
+      <h3>Create Company Profile</h3>
+
+      <form>
+        <label>Company Name:</label>
+        <input type="text" required />
+
+        <label>Company Description:</label>
+        <textarea rows="4" required></textarea>
+
+        <label>Industry Type:</label>
+        <select>
+          <option>IT Services</option>
+          <option>Finance</option>
+          <option>Healthcare</option>
+          <option>Education</option>
+        </select>
+
+        <label>Company Location:</label>
+        <input type="text" placeholder="City, State" required />
+
+        <label>Company Website:</label>
+        <input type="text" placeholder="www.company.com" />
+
+        <label>Company Email:</label>
+        <input type="email" required />
+
+        <label>Company Contact Number:</label>
+        <input
+          type="tel"
+          pattern="^\d{10,15}$"
+          placeholder="Only digits"
+          required
+        />
+
+        <label>Total Employees:</label>
+        <select>
+          <option>1 - 10</option>
+          <option>11 - 50</option>
+          <option>51 - 200</option>
+          <option>200+</option>
+        </select>
+
+        <label>Founded Year:</label>
+        <input type="number" placeholder="2015" />
+
+        <button type="submit">Save Company Profile</button>
+      </form>
+    </div>
+  </body>
+</html>

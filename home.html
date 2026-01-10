@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Portal - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .selectors select {
+            margin-left: 10px;
+        }
+
+        .search-box {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px 10px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid black;
+            width: 180px;
+            height: 200px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .card h4 {
+            text-align: center;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">JobPortal</div>
+
+        <div class="selectors">
+            <select>
+                <option>Companies</option>
+                <option>Google</option>
+                <option>Amazon</option>
+                <option>Microsoft</option>
+            </select>
+
+            <select>
+                <option>Jobs</option>
+                <option>Software Engineer</option>
+                <option>Data Analyst</option>
+                <option>Tester</option>
+            </select>
+
+            <select onchange="location = this.value;">
+    <option value="">Role</option>
+    <option value="login_seeker.html">Job Seeker</option>
+    <option value="login_emp.html">Employer</option>
+    <option value="login_admin.html">Admin</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-box">
+        <input type="text" placeholder="Company name / Enter skills">
+        <button>Search</button>
+    </div>
+
+    <!-- Company Details Cards -->
+    <div class="cards">
+        <div class="card">
+            <h4>Google</h4>
+            <p><b>Role:</b> Software Engineer</p>
+            <p><b>Location:</b> Bangalore</p>
+            <p><b>Experience:</b> 2+ Years</p>
+        </div>
+
+        <div class="card">
+            <h4>Amazon</h4>
+            <p><b>Role:</b> Data Analyst</p>
+            <p><b>Location:</b> Hyderabad</p>
+            <p><b>Experience:</b> Fresher</p>
+        </div>
+
+        <div class="card">
+            <h4>Microsoft</h4>
+            <p><b>Role:</b> Full Stack Developer</p>
+            <p><b>Location:</b> Pune</p>
+            <p><b>Experience:</b> 3+ Years</p>
+        </div>
+    </div>
+
+</body>
+</html>

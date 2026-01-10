@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee - Create Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        #error {
+            color: red;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p.login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Employee</h2>
+
+    <div class="container">
+        <h3>Create Employer Account</h3>
+
+        <div id="error"></div>
+
+        <form id="employeeForm" onsubmit="return validateForm()">
+            <label>Name:</label>
+            <input type="text" id="name" required>
+
+            <label>Email:</label>
+            <input type="email" id="email" required>
+
+            <label>Password:</label>
+            <input type="password" id="password" required>
+
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword" required>
+
+            <label>Contact:</label>
+            <input type="tel" id="contact" required pattern="^\d{10}$" placeholder="Only 10 digits">
+
+            <label>Company Name:</label>
+            <input type="text" id="companyName" required>
+
+            <label>Company Description:</label>
+            <textarea id="companyDesc" rows="3" required></textarea>
+
+            <label>Company Location:</label>
+            <input type="text" id="companyLocation" required>
+
+            <label>Company Contact:</label>
+            <input type="tel" id="companyContact" required pattern="^\d{10}$" placeholder="Only 10 digits">
+
+            <label>Company Email:</label>
+            <input type="email" id="companyEmail" required>
+
+            <button type="submit">Create Account</button>
+        </form>
+
+        <p class="login-link">
+            Already have an account? <a href="login_emp.html">Login here</a>
+        </p>
+    </div>
+
+    <script>
+        function validateForm() {
+            const errorDiv = document.getElementById('error');
+            errorDiv.innerText = '';
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const companyName = document.getElementById('companyName').value.trim();
+            const companyDesc = document.getElementById('companyDesc').value.trim();
+            const companyLocation = document.getElementById('companyLocation').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            const companyContact = document.getElementById('companyContact').value.trim();
+            const companyEmail = document.getElementById('companyEmail').value.trim();
+
+            // Basic empty checks
+            if (!name || !email || !password || !confirmPassword || !companyName || !companyDesc || !companyLocation || !contact || !companyContact || !companyEmail) {
+                errorDiv.innerText = "All fields are required.";
+                return false;
+            }
+
+            // Email format check
+            if (!validateEmail(email)) {
+                errorDiv.innerText = "Invalid personal email address.";
+                return false;
+            }
+            if (!validateEmail(companyEmail)) {
+                errorDiv.innerText = "Invalid company email address.";
+                return false;
+            }
+
+            // Password match
+            if (password !== confirmPassword) {
+                errorDiv.innerText = "Passwords do not match.";
+                return false;
+            }
+
+            // Contact numbers pattern
+            const phonePattern = /^\d{10,15}$/;
+            if (!phonePattern.test(contact)) {
+                errorDiv.innerText = "Contact number must be 10 to 15 digits.";
+                return false;
+            }
+            if (!phonePattern.test(companyContact)) {
+                errorDiv.innerText = "Company contact number must be 10 to 15 digits.";
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateEmail(email) {
+            // Basic email regex
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+
+</body>
+</html>
