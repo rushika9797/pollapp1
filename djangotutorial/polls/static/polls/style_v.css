@@ -1,0 +1,43 @@
+/* Make background image visible */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Page background */
+body {
+    background-image: url("images/img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Center content */
+.container {
+    text-align: center;
+    padding-top: 40px;
+}
+
+/* Remove default list style */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Simple link style */
+ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 22px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/* Hover effect */
+ul li a:hover {
+    color: white;
+    background-color: #1e3a8a;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
